@@ -14,23 +14,13 @@ def get_fibonacci_last_digit_naive(n):
 
     return current % 10
 
-def get_fibonacci_opt(n):
-    n = calc_fib(n)
-    return n % 10
-
-
-def calc_fib(n):
-
-    F = range(n+1)
-    F.insert(0,0)
-    F.insert(1,1)
-
-    for i in range(2, n+1):
-        F[i] =F[i-1] + F[i-2]
-    return F[n]
-
 if __name__ == '__main__':
-    #input = sys.stdin.read()
-    #n = int(input)
-    n = 3
+
+   # input = sys.stdin.read()
+    # n = int(input)
+    n = 327305
+    start = timeit.default_timer()
     print(get_fibonacci_last_digit_naive(n))
+    stop = timeit.default_timer()
+    total = stop - start
+    print("total time: %0.3f" % total)

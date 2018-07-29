@@ -1,7 +1,8 @@
 # Uses python3
 import sys
+import timeit
 
-def get_fibonacci_huge_naive(n, m):
+def get_fibonacci_last_digit_naive(n):
     if n <= 1:
         return n
 
@@ -11,12 +12,7 @@ def get_fibonacci_huge_naive(n, m):
     for _ in range(n - 1):
         previous, current = current, previous + current
 
-    return current % m
-
-def get_fibonacci_opt(n, m):
-    num = calc_fib(n)
-    
-
+    return current % 10
 
 def get_fibonacci_opt(n):
     
@@ -28,9 +24,9 @@ def get_fibonacci_opt(n):
         F[i] = (F[i-1] + F[i-2]) % 10
     return F[n]
 
+
 if __name__ == '__main__':
-    #input = sys.stdin.read();
-    #n, m = map(int, input.split())
-    n = 2015
-    m = 3 
-    print(get_fibonacci_huge_naive(n, m))
+    #input = sys.stdin.read()
+    #n = int(input)
+    n = 331
+    print(get_fibonacci_opt(n))
