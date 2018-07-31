@@ -16,5 +16,6 @@ def fibonacci_sum_squares_naive(n):
     return sum % 10
 
 if __name__ == '__main__':
-    n = int(stdin.read())
+    #n = int(stdin.read())
+    n = 5
     print(fibonacci_sum_squares_naive(n))

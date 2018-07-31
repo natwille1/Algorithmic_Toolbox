@@ -12,7 +12,7 @@ def calc_fib(n):
 		F[i] =F[i-1] + F[i-2]
 	return F[n]
 
-n = 10
+n = 200
 start = timeit.default_timer()
 print(calc_fib(n))
 stop = timeit.default_timer()

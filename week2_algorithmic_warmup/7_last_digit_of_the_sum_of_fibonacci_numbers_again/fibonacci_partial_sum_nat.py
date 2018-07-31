@@ -18,26 +18,27 @@ def fibonacci_partial_sum_naive(from_, to):
 
 def fibonacci_partial_sum_opt(from_, to):
 	if from_ != to:
-		start = fibonacci_opt(from_)
-		end = calculate_sum(to)
+		start = fibonacci_opt(from_ + 2, 10) 
+		end = fibonacci_opt(to +1, 10)
 		print start, end
 		total = end - start 
+     #   print total
 	else:
 		total = fibonacci_opt(to)
 		print total
-	return total % 10 
+	return total % 10
 
-def fibonacci_opt(n):
+def fibonacci_opt(n, m):
     F = range(n+1)
     F.insert(0,0)
     F.insert(1,1)
 
     for i in range(2, n+1):
-        F[i] = (F[i-1] + F[i-2]) 
+        F[i] = (F[i-1] + F[i-2]) % m
     return F[n]
 
 def calculate_sum(n):
-    S = fibonacci_opt(n + 2) - 1
+    S = fibonacci_opt(n + 2) - 1 
     return S 
 
 
